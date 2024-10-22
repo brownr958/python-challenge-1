@@ -222,7 +222,7 @@ print("--------------------------|--------|----------")
 # and print the prices.
 totalprice = 0
 
-for price in order:
-    totalprice = totalprice + (float(price['Price'])*int(price['Quantity']))
+totalprice = sum([(float(price['Price'])*int(price['Quantity'])) for price in order])
+print(totalprice)
 
 print(f'Your total price is ${totalprice}')
